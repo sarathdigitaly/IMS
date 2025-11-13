@@ -1,0 +1,55 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pdb
+*.egg
+*.egg-info/
+dist/
+build/
+
+# --- Virtual Environment ---
+venv/
+env/
+.venv/
+ENV/
+env.bak/
+venv.bak/
+
+# --- Django specific ---
+*.log
+db.sqlite3
+media/
+staticfiles/
+static/
+
+# --- VSCode / PyCharm ---
+.vscode/
+.idea/
+
+# --- OS files ---
+.DS_Store
+Thumbs.db
+
+# --- Environment / Secrets ---
+.env
+*.env
+.env.local
+.env.production
+.env.development
+
+# --- Migrations cache (optional but safe) ---
+*/migrations/__pycache__/
+*/migrations/*.pyc
+
+# --- Node / React frontend (if present) ---
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# --- Backup or temporary files ---
+*.bak
+*.swp
+*.tmp

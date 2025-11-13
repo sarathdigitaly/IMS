@@ -26,9 +26,15 @@ SECRET_KEY = 'django-insecure-+yz+3ys7++)c!a_%fddc-jyot4d)@1fam@!h5$)qbb0%8(b!a*
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+MYSQL_URI=os.getenv("MYSQL_URI")
+SECRET_KEY=os.getenv("SECRET_KEY")
 # Application definition
 
 INSTALLED_APPS = [
@@ -94,11 +100,11 @@ CORS_ALLOW_ALL_ORIGINS=True
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'myproject',   # DB name
-        'USER': 'root',        # MySQL user
-        'PASSWORD': 'root', # MySQL password
-        'HOST': '127.0.0.1',
-        'PORT': '3306',
+        'NAME': os.getenv('DB_NAME'),
+        'USER': os.getenv('DB_USER'),
+        'PASSWORD': os.getenv('DB_PASSWORD'),
+        'HOST': os.getenv('DB_HOST', '127.0.0.1'),
+        'PORT': os.getenv('DB_PORT', '3306'),
         'OPTIONS': {
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
         }
